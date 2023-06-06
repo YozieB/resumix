@@ -30,7 +30,17 @@
 body {
   font-family: "Lucida", sans-serif;
   background-color: var(--black);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray);
+}
+
+h1,h2,h3,h4,h5 {
   color: var(--white);
+  font-weight: 900;
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
 }
 
 ul {
@@ -45,4 +55,35 @@ ul {
   gap: 32px 0;
   padding: 16px;
   margin: 150px auto;
+}
+
+.element {
+  display: flex;
+  flex-direction: column;
+  gap: 16px 0;
+  padding-top: 16px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  &-title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: var(--blue);
+  position: relative;
+  width: fit-content;
+  &::after {
+    content: "";
+    right: -10px;
+    position: absolute;
+    background-position: center;
+    width: 4.5px;
+    background-repeat: no-repeat;
+    background-image: url("@/assets/images/link.svg");
+    top: 0;
+    bottom: 0;
+  }
 }
