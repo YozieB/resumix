@@ -191,11 +191,36 @@
 </template>
 
 <script>
+import { Client, /*Account, ID,*/ Databases } from 'appwrite'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+    data: function() {
+        return {
+            tasks: [],
+            newTask: ''
+        }
+    },
+    mounted() {
+      this.fetchTasks()
+    },
+    methods: {
+        fetchTasks: function() {
+            const client = new Client()
+                .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
+                .setProject('6480ed579d9260672d57')
+            const databases = new Databases(client);
+            const promise = databases.getDocument('6480eecb711e44666e19', '6480eed54ec0aeb3e375', '6480f0967ec025310aad')
+
+            promise.then(function (response) {
+                console.log(response); // Success
+            }, function (error) {
+                console.log(error); // Failure
+            });
+        }
+    }
 }
 </script>
 
