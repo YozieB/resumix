@@ -109,6 +109,84 @@
               </div>
           </div>
       </div>
+      <div class="element">
+          <h2 class="element-title">Stack</h2>
+          <div class="resume__projects resume__stack">
+              <div class="resume__projects-item resume__stack-item">
+                  <div class="resume__stack-tech">
+                      <img src="@/assets/images/stack-html.svg" class="resume__stack-image" alt="title">
+                  </div>
+                  <div class="resume__stack-info">
+                      <div class="resume__stack-title">HTML</div>
+                      <div class="resume__stack-desc">Strong knowledge</div>
+                  </div>
+              </div>
+              <div class="resume__projects-item resume__stack-item">
+                  <div class="resume__stack-tech">
+                      <img src="@/assets/images/stack-css.svg" class="resume__stack-image" alt="title">
+                  </div>
+                  <div class="resume__stack-info">
+                      <div class="resume__stack-title">CSS</div>
+                      <div class="resume__stack-desc">Variables, CSS-Modules</div>
+                  </div>
+              </div>
+              <div class="resume__projects-item resume__stack-item">
+                  <div class="resume__stack-tech">
+                      <img src="@/assets/images/stack-js.svg" class="resume__stack-image" alt="title">
+                  </div>
+                  <div class="resume__stack-info">
+                      <div class="resume__stack-title">JavaScript</div>
+                      <div class="resume__stack-desc">ES6, async</div>
+                  </div>
+              </div>
+              <div class="resume__projects-item resume__stack-item">
+                  <div class="resume__stack-tech">
+                      <img src="@/assets/images/stack-react.svg" class="resume__stack-image" alt="title">
+                  </div>
+                  <div class="resume__stack-info">
+                      <div class="resume__stack-title">React.js</div>
+                      <div class="resume__stack-desc">Hooks, React.js, React Router, Redux, Redux Toolkit</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="resume__contact element">
+          <h2 class="element-title">Contact</h2>
+          <div class="resume__contact-item">
+              <div class="resume__contact-title">Email</div>
+              <div class="resume__contact-divider"></div>
+              <a href="#" class="link resume__contact-link">example@gmail.com</a>
+          </div>
+          <div class="resume__contact-item">
+              <div class="resume__contact-title">Twitter</div>
+              <div class="resume__contact-divider"></div>
+              <a href="#" class="link resume__contact-link">@username</a>
+          </div>
+          <div class="resume__contact-item">
+              <div class="resume__contact-title">Instagram</div>
+              <div class="resume__contact-divider"></div>
+              <a href="#" class="link resume__contact-link">@username</a>
+          </div>
+          <div class="resume__contact-item">
+              <div class="resume__contact-title">Figma</div>
+              <div class="resume__contact-divider"></div>
+              <a href="#" class="link resume__contact-link">@username</a>
+          </div>
+          <div class="resume__contact-item">
+              <div class="resume__contact-title">Dribbble</div>
+              <div class="resume__contact-divider"></div>
+              <a href="#" class="link resume__contact-link">@username</a>
+          </div>
+          <div class="resume__contact-item">
+              <div class="resume__contact-title">Github</div>
+              <div class="resume__contact-divider"></div>
+              <a href="#" class="link resume__contact-link">@username</a>
+          </div>
+      </div>
+      <div class="resume__footer">
+          <div class="resume__footer-item">© 2023 - Peter Jones</div>
+          <div class="resume__footer-item">All Rights Reserved</div>
+      </div>
   </div>
 </template>
 
@@ -123,6 +201,11 @@ export default {
 
 <style lang="scss" scoped>
 .resume {
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
   &__heading {
     display: flex;
     flex-direction: column;
@@ -164,6 +247,11 @@ export default {
       flex-direction: column;
       gap: 16px 0;
       padding: 16px;
+        border-radius: 8px;
+        transition: background-color .2s ease;
+        &:hover {
+            background-color: rgba(255, 255, 255, .05);
+        }
       &-heading {
         display: flex;
         align-items: center;
@@ -194,6 +282,11 @@ export default {
       flex-direction: column;
       grid-column: 6 span;
       gap: 16px 0;
+        border-radius: 8px;
+        transition: background-color .2s ease;
+        &:hover {
+            background-color: rgba(255, 255, 255, .05);
+        }
     }
     &-heading {
       display: flex;
@@ -218,5 +311,57 @@ export default {
         align-self: center;
     }
   }
+    &__stack {
+        &-item {
+            padding: 8px;
+            flex-direction: row;
+            gap: 0 16px;
+            align-items: center;
+        }
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px 0;
+        }
+        &-tech {
+            border-radius: 4px;
+            background-color: var(--white);
+            min-width: 44px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            font-family: "Inter", sans-serif;
+            color: var(--white);
+        }
+        &-desc {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+        }
+        &-image {
+            width: 75%;
+        }
+    }
+    &__contact {
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 0 16px;
+            align-items: center;
+            padding-right: 10px;
+        }
+        &-divider {
+            background: rgba(255, 255, 255, 0.2);
+            width: 100%;
+            height: 2px;
+        }
+    }
 }
 </style>
