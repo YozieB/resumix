@@ -191,7 +191,7 @@
 </template>
 
 <script>
-import { Client, /*Account, ID,*/ Databases } from 'appwrite'
+import { Client, Т Databases } from 'appwrite'
 export default {
   name: 'HelloWorld',
   props: {
